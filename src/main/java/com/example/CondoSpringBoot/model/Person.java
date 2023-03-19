@@ -1,0 +1,39 @@
+package com.example.CondoSpringBoot.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.UUID;
+
+@Document(collection = "person")
+public class Person {
+
+    @Id
+    private final UUID id;
+    private String username;
+    private String email;
+    private String password;
+
+    public Person(UUID id, String username, String email, String password) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+}
